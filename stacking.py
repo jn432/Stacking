@@ -1,5 +1,5 @@
-#the goal of this project is to get better at python while also learning stacking
-#and improve use of github, spyder and other programs
+#the goal of this project is to get better at python while also learning
+#stacking and improve use of github, spyder and other programs
 
 #%% load dataset
 #DATASET CAN BE FOUND HERE
@@ -19,7 +19,8 @@ X = pd.concat([X.drop([0], axis=1), pd.get_dummies(X[0])], axis=1).to_numpy()
 # 3 sexes, Male, Female, Infant
 
 #normalize dataset to be positive values between 0 and 1
-#decision to normalize to positive values only is because all attributes are positive measurements
+#decision to normalize to positive values only is because all 
+#are positive measurements
 from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler()
 scaler.fit(X)
@@ -76,3 +77,6 @@ print('MSE train GB:', mean_squared_error(y_train, y_pred))
 y_pred = gb.predict(X_test)
 
 print('MSE test GB:', mean_squared_error(y_test, y_pred))
+
+#%% 3rd model(TBD - probably one better suited for outliers)
+#blah
