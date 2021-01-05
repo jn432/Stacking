@@ -1,15 +1,13 @@
 #the goal of this project is to get better at python while also learning stacking
-#and improve use of github
+#and improve use of github, spyder and other programs
 
+#%% load dataset
 #DATASET CAN BE FOUND HERE
 #https://archive.ics.uci.edu/ml/datasets/abalone
-
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler
-
-#load dataset, prepare the dataset
 df = pd.read_csv('abalone.data', header=None)
 
+#%% prepare the dataset
 #split target and features, convery to numpy arrays
 y = df[8].to_numpy()
 X = df.drop([8], axis=1)
@@ -20,6 +18,7 @@ X = pd.concat([X.drop([0], axis=1), pd.get_dummies(X[0])], axis=1).to_numpy()
 
 #normalize dataset to be positive values between 0 and 1
 #decision to normalize to positive values only is because all attributes are positive measurements
+from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler()
 scaler.fit(X)
 X = scaler.transform(X)
@@ -29,3 +28,8 @@ X = scaler.transform(X)
 min_y = min(y)
 max_y = max(y)
 y = (y - min_y) / (max_y - min_y)
+
+#%%
+
+print('a')
+print('b')
