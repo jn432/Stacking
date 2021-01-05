@@ -1,6 +1,9 @@
 #the goal of this project is to get better at python while also learning stacking
 #and improve use of github
 
+#DATASET CAN BE FOUND HERE
+#https://archive.ics.uci.edu/ml/datasets/abalone
+
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
